@@ -17,7 +17,15 @@ namespace FibonacciSeries
 
             maxLength = GetUserInput() - 1;
 
+            Console.WriteLine("\nRecursively get the first {0} numbers in the Fibonacci sequence:", maxLength + 1);
+
             FibonacciRecursive(0, 0, 0);
+
+            Console.WriteLine("\n\nLoop to get the first {0} numbers in the Fibonacci sequence:", maxLength + 1);
+
+            FibonacciLoop();
+
+            Console.WriteLine("\n\nCompleted!");
 
             Console.Read();
         }
@@ -32,6 +40,33 @@ namespace FibonacciSeries
 
             if (result >= 2) { return result; }
             else { return 2;  }
+        }
+
+        private static void FibonacciLoop()
+        {
+            int lenght = 0;
+            long num1 = 0, num2 = 0, result;
+
+            while (lenght <= maxLength)
+            {
+                
+                if (lenght == 0)
+                {
+                    Console.Write("{0} {1} ", 0, 1);
+                    num1 = 0;
+                    num2 = 1;
+                    lenght = 1;
+                }
+                else
+                {
+                    result = num1 + num2;
+                    Console.Write("{0} ", result);
+                    num1 = num2;
+                    num2 = result;
+                }
+
+                lenght++;
+            }
         }
 
         private static void FibonacciRecursive(long num1, long num2, int length)

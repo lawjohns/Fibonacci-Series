@@ -77,7 +77,6 @@ namespace FibonacciSeries
             if (length < maxLength)
             {
                 if ( num1 == 0 && num2 == 0 ) {  num2 = 1; }
-                else if ( num1 == 1 && num2 == 0 ) { num2 = 0; }
 
                 FibonacciRecursive(num2, result, ++length);
             }
